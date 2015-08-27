@@ -18,8 +18,23 @@ test('with children', function (t) {
       .prop('key', function (d) { return d })
   }, function (result) {
     t.equal(result.type, 'div', 'it built a div')
-    t.equal(result._store.props.children[1].type, 'p', 'correct tags were added')
-    t.equal(result._store.props.children[1].key, '2', 'tags have keys')
+
+    var children = result._store.props.children
+    t.equal(children[1].type, 'p', 'correct tags were added')
+    t.equal(children[1].key, '2', 'tags have keys')
   })
 })
 
+test('with text', function (t) {
+  t.plan(3)
+  render(function (el) {
+    el.append('p')
+      .text('Hello, World!')
+      .prop('key', 'some-text')
+  }, function (result) {
+    var tag = result._store.props.children[0]
+    t.equal(tag.type, 'p', 'correct tags were added')
+    t.equal(tag.key, 'some-text', 'tags has a key')
+    t.equal(tag._store.props.children[0], 'Hello, World!', 'text is correct')
+  })
+})
