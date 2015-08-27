@@ -18,27 +18,6 @@
     return el._reactProps
   }
 
-  // Modified version of d3.selection.prototype.attr
-  d3.selection.prototype.prop = function (name, value) {
-    var node = this.node()
-
-    if (arguments.length < 2) {
-
-      // For prop(string), return the prop value for the first node.
-      if (typeof name === 'string') {
-        return getProps(node)[name]
-      }
-
-      // For prop(object), the object specifies the names and values of the getProps
-      // to set or remove. The values may be functions that are evaluated for
-      // each element.
-      for (value in name) this.each(d3_selection_prop(value, name[value]))
-      return this
-    }
-
-    return this.each(d3_selection_prop(name, value))
-  }
-
   function d3_selection_prop (name, value) {
     // For prop(string, null), remove the prop with the specified name.
     function removeProp () {
@@ -64,10 +43,6 @@
         : setPropValue)
   }
 
-  d3.selection.prototype.toReact = function () {
-    return d3_selection_toReact(this.node())
-  }
-
   function d3_selection_toReact (node) {
     var elName = node.nodeName.toLowerCase()
     var children = Array.prototype.slice.call(node.childNodes)
@@ -80,5 +55,30 @@
     } else {
       return React.createElement(elName, props, children.map(d3_selection_toReact))
     }
+  }
+
+  // Modified version of d3.selection.prototype.attr
+  d3.selection.prototype.prop = function (name, value) {
+    var node = this.node()
+
+    if (arguments.length < 2) {
+
+      // For prop(string), return the prop value for the first node.
+      if (typeof name === 'string') {
+        return getProps(node)[name]
+      }
+
+      // For prop(object), the object specifies the names and values of the getProps
+      // to set or remove. The values may be functions that are evaluated for
+      // each element.
+      for (value in name) this.each(d3_selection_prop(value, name[value]))
+      return this
+    }
+
+    return this.each(d3_selection_prop(name, value))
+  }
+
+  d3.selection.prototype.toReact = function () {
+    return d3_selection_toReact(this.node())
   }
 }))
