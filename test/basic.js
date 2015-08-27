@@ -38,3 +38,19 @@ test('with text', function (t) {
     t.equal(tag._store.props.children[0], 'Hello, World!', 'text is correct')
   })
 })
+
+test('depth of two', function (t) {
+  t.plan(2)
+  render(function (el) {
+    el.append('p')
+      .prop('key', 'one')
+      .append('p')
+      .prop('key', 'two')
+  }, function (result) {
+    var one = result._store.props.children[0]
+    var two = one._store.props.children[0]
+
+    t.equal(one.key, 'one', 'the first exists')
+    t.equal(two.key, 'two', 'the second exists')
+  })
+})
