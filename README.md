@@ -70,6 +70,10 @@ make test
 make test-watch
 ```
 
+## Components
+
+ * [d3-react-sparkline][]
+
 ## Author
 
 [Oliver Caldwell][author-site] ([@OliverCaldwell][author-twitter])
@@ -93,3 +97,4 @@ Do what you want. Learn as much as you can. Unlicense more software.
 [react-d3-wrap]: https://www.npmjs.com/package/react-d3-wrap
 [qubit]: http://www.qubit.com/
 [umd]: https://github.com/umdjs/umd
+[d3-react-sparkline]: https://github.com/QubitProducts/d3-react-sparkline
