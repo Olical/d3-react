@@ -7,7 +7,7 @@
     factory(exports, require('d3'), require('react'))
   } else {
     // Browser globals
-    factory((root.d3react = {}), root.d3, root.React)
+    factory(null, root.d3, root.React)
   }
 }(this, function (exports, d3, React) {
   function getProps (el) {
