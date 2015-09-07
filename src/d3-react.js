@@ -62,7 +62,6 @@
     var node = this.node()
 
     if (arguments.length < 2) {
-
       // For prop(string), return the prop value for the first node.
       if (typeof name === 'string') {
         return getProps(node)[name]
