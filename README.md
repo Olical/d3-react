@@ -1,5 +1,7 @@
 # d3-react [![npm version](https://badge.fury.io/js/d3-react.svg)](http://badge.fury.io/js/d3-react) [![Build Status](https://travis-ci.org/Olical/d3-react.svg?branch=master)](https://travis-ci.org/Olical/d3-react) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
+# WARNING: Depreciated in favour of [react-faux-dom][], my other (better) approach to using D3 with React.
+
 Render [React][] elements with [D3][] declaratively and without state, as it should be.
 
 ## Usage
@@ -49,10 +51,6 @@ As you can see, I'm using `prop` in place of `attr` and `toReact` at the end to 
 
 This script depends upon D3 and React, so make sure they're available within your application. It's wrapped in a [UMD][], so you should be able to use it with most module systems. You may need to configure your build tool to not include multiple versions of React and D3 in your final script bundle.
 
-## Example components
-
- * [d3-react-sparkline][]
-
 ## Why?
 
 This was born from trying to use these two excellent tools together, but not liking how the existing bridges were executed ([react-d3-wrap][], for example). The wrap approach works, but I'd much rather declare my view and let React work out what to render.
@@ -97,4 +95,4 @@ Do what you want. Learn as much as you can. Unlicense more software.
 [react-d3-wrap]: https://www.npmjs.com/package/react-d3-wrap
 [qubit]: http://www.qubit.com/
 [umd]: https://github.com/umdjs/umd
-[d3-react-sparkline]: https://github.com/QubitProducts/d3-react-sparkline
+[react-faux-dom]: https://github.com/Olical/react-faux-dom
