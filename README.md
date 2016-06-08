@@ -1,6 +1,6 @@
 # d3-react [![npm version](https://badge.fury.io/js/d3-react.svg)](http://badge.fury.io/js/d3-react) [![Build Status](https://travis-ci.org/Olical/d3-react.svg?branch=master)](https://travis-ci.org/Olical/d3-react) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
-# WARNING: Depreciated in favour of [react-faux-dom][], my other (better) approach to using D3 with React.
+# WARNING: Deprecated in favour of [react-faux-dom][], my other (better) approach to using D3 with React.
 
 Render [React][] elements with [D3][] declaratively and without state, as it should be.
 
